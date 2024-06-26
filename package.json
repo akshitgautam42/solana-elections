@@ -1,0 +1,24 @@
+{
+  "name": "solana-elections",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node client/main.ts",
+    "clean": "npm run clean:program",
+    "test": "npm run test:program",
+    "build:program": "cargo build-bpf --manifest-path=./program/Cargo.toml --sbf-out-dir=./my-program",
+    "clean:program": "cargo clean --manifest-path=./program/Cargo.toml && rm -rf ./",
+    "test:program": "cargo test-bpf --manifest-path=./program/Cargo.toml"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@solana/web3.js": "^1.77.3",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/mz": "2.7.4",
+    "mz": "^2.7.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
